@@ -1,0 +1,2 @@
+pandoc README.md -o 2026-05-impacto_qualidade_codigo_linguagem_programacao.docx   
+libreoffice --headless --convert-to pdf 2026-05-impacto_qualidade_codigo_linguagem_programacao.docx
