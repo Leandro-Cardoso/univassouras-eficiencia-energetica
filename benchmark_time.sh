@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# COMAND: /usr/bin/time -v ./PROGRAM
+
 RUNS=${1:-5}
 
 PROGRAMS=(
@@ -24,19 +26,19 @@ echo " Execuções por teste: $RUNS"
 echo "==========================================="
 echo
 
-printf "%-15s %-12s %-12s %-12s\n" 
-"Programa" 
-"Tempo(s)" 
-"CPU(s)" 
+printf "%-15s %-12s %-12s %-12s\n" \
+"Programa" \
+"Tempo(s)" \
+"CPU(s)" \
 "Mem(KB)"
 
-printf "%-15s %-12s %-12s %-12s\n" 
-"---------------" 
-"------------" 
-"------------" 
+printf "%-15s %-12s %-12s %-12s\n" \
+"---------------" \
+"------------" \
+"------------" \
 "------------"
 
-echo "program,time,cpu,memory" > benchmark_results.csv
+echo "program,time,cpu,memory" > benchmark_time_results.csv
 
 for entry in "${PROGRAMS[@]}"
 do
@@ -84,11 +86,11 @@ printf "%-15s %-12s %-12s %-12s\n" \
     "$avg_cpu" \
     "$avg_mem"
 
-echo "$name,$avg_time,$avg_cpu,$avg_mem" >> benchmark_results.csv
+echo "$name,$avg_time,$avg_cpu,$avg_mem" >> benchmark_time_results.csv
 ```
 done
 
 echo
 echo "CSV salvo em:"
-echo "benchmark_results.csv"
+echo "benchmark_time_results.csv"
 echo
