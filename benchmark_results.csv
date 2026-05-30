@@ -1,0 +1,5 @@
+program,time,cpu,memory
+bad_cpp,7.2940,7.2640,5534
+good_cpp,0.0000,0.0000,5604
+bad_python,128.8360,128.2720,10900
+good_python,0.0400,0.0360,11152
